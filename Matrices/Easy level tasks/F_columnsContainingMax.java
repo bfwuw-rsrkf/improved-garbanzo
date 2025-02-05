@@ -16,7 +16,7 @@ class F_columnsContainingMax {
         }
         input.close();
 
-        ArrayList<Integer> columnsContainingMax = findColumnsContainingMax(m, rows);
+        ArrayList<Integer> columnsContainingMax = findColumnsContainingMax(m);
         for (int i = 0; i < columnsContainingMax.size() / rows; i++) {
             int currIndex = i * (rows - 1);
             for (int j = currIndex; j < currIndex + rows; j++) {
@@ -26,7 +26,7 @@ class F_columnsContainingMax {
         }
     }
 
-    static ArrayList<Integer> findColumnsContainingMax(int[][] matrix, int columnSize) {
+    static ArrayList<Integer> findColumnsContainingMax(int[][] matrix) {
         ArrayList<Integer> targetColumnsIndex = new ArrayList<>();
         int max = matrix[0][0];
 
@@ -48,7 +48,7 @@ class F_columnsContainingMax {
 
         ArrayList<Integer> targetColumns = new ArrayList<>();
         for (int j = 0; j < targetColumnsIndex.size(); j++) {
-            for (int i = 0; i < columnSize; i++) {
+            for (int i = 0; i < matrix.length; i++) {
                 targetColumns.add(matrix[i][targetColumnsIndex.get(j)]);
             }
         }
