@@ -29,8 +29,8 @@ class F_columnsContainingMax {
         ArrayList<Integer> targetColumnsIndex = new ArrayList<>();
         int max = matrix[0][0];
 
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
+        for (int j = 0; j < matrix[0].length; j++) {
+            for (int i = 0; i < matrix.length; i++) {
                 int currElem = matrix[i][j];
 
                 if (max < currElem) {
